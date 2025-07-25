@@ -1,0 +1,15 @@
+<div>
+    <div>
+        <h1>Welcome!</h1>
+    </div>
+    <div>
+        <button (click)="handleLogin()">
+            Google
+        </button>
+    </div>
+
+</div>
+
+<div *ngIf="loading">
+    <h1>Loading...</h1>
+</div>

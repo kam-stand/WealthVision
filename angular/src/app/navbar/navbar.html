@@ -1,0 +1,16 @@
+<div class="navbar">
+  <div class="nav-items">
+    <div [class.active]="view === 'data'" (click)="handleNav('data')">
+      <h2>Data</h2>
+    </div>
+    <div [class.active]="view === 'user'" (click)="handleNav('user')">
+      <h2>User</h2>
+    </div>
+    <div [class.active]="view === 'contacts'" (click)="handleNav('contacts')">
+      <h2>Contacts</h2>
+    </div>
+    <div [class.active]="view === 'social'" (click)="handleNav('social')">
+      <h2>Social</h2>
+    </div>
+  </div>
+</div>

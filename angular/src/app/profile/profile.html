@@ -1,0 +1,83 @@
+<app-navbar [view]="currentView" (viewChange)="onViewChange($event)"></app-navbar>
+
+<div class="profile-container">
+    <div class="profile-header">
+        <div>
+            <h1>Profile</h1>
+        </div>
+        <div>
+            <p>            {{currentView}}
+</p>
+        </div>
+    </div>
+
+    <div class="profile-info">
+        @if (currentView == 'data') {
+        <div class="profile-data">
+            <div>Data Access</div>
+            <div>
+                <input type="checkbox" id="c1" name="company" value="company-overview" />
+                <label for="vehicle1">Company overview</label><br />
+                <input type="checkbox" id="c2" name="ETF" value="etf" />
+                <label for="vehicle2">ETF</label><br />
+                <input type="checkbox" id="c3" name="commodity" value="commodity" />
+                <label for="vehicle3">Commodities</label><br />
+                <input type="checkbox" id="c4" name="crypto" value="crypt" />
+                <label for="vehicle3">Crypto</label><br />
+                <input type="checkbox" id="c5" name="forex" value="forex" />
+                <label for="vehicle3">Forex</label><br />
+            </div>
+        </div>
+        } @else if (currentView == 'user') {
+        <div class="profile-user">
+            <div>
+                <h2>Showing user section</h2>
+            </div>
+            <div>
+                <ol>
+                    <li>get name</li>
+                </ol>
+            </div>
+        </div>
+
+        } @else if (currentView == 'contacts') {
+        <div class="profile-contacts">
+            <div>Showing contacts section</div>
+            <div>
+                <ol>
+                    <li>email</li>
+                    <li>phone #</li>
+                </ol>
+            </div>
+        </div>
+
+        } @else if (currentView == 'social') {
+        <div class="profile-social">
+            <div class="social">Your Socials</div>
+            <div>
+                <ol>
+                    <li>twitter</li>
+                    <li>linkedin</li>
+                    <li>github</li>
+                </ol>
+            </div>
+        </div>
+        } @else {
+        <div class="profile-data">
+            <div>Data Access</div>
+            <div>
+                <input type="checkbox" id="c1" name="company" value="company-overview" />
+                <label for="vehicle1">Company overview</label><br />
+                <input type="checkbox" id="c2" name="ETF" value="etf" />
+                <label for="vehicle2">ETF</label><br />
+                <input type="checkbox" id="c3" name="commodity" value="commodity" />
+                <label for="vehicle3">Commodities</label><br />
+                <input type="checkbox" id="c4" name="crypto" value="crypt" />
+                <label for="vehicle3">Crypto</label><br />
+                <input type="checkbox" id="c5" name="forex" value="forex" />
+                <label for="vehicle3">Forex</label><br />
+            </div>
+        </div>
+        }
+    </div>
+</div>

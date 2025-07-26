@@ -1,0 +1,37 @@
+.profile-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    margin: 5px;
+    height: 120px;
+    width: 400px;
+    border: 2px dotted gray;
+    border-radius: 5px;
+    background-color: lightgray;
+
+}
+
+.profile-header div{
+    height: 50px;
+}
+
+.profile-social{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.social{
+    margin: 5px;
+    
+}

@@ -1,15 +1,22 @@
-<div>
-    <div>
-        <h1>Welcome!</h1>
+<div class="auth-container">
+    <div class="auth-info">
+        @if (!login) {
+            <div>
+            <h1>WealthVision!</h1>
+        </div>
+        <div>
+            <h2>Stock are going crazy!! 🚀</h2>
+        </div>
+        <div>
+            <button (click)="handleLogin()">Login!</button>
+        </div>
+        }
+        @else {
+        <div>
+            <div>
+                <h1>Loading...</h1>
+            </div>
+        </div>
+        }
     </div>
-    <div>
-        <button (click)="handleLogin()">
-            Google
-        </button>
-    </div>
-
-</div>
-
-<div *ngIf="loading">
-    <h1>Loading...</h1>
 </div>

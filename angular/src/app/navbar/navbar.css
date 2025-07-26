@@ -1,0 +1,36 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-bottom: solid 1px black;
+}
+
+.nav-items{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    margin: 5px;
+    
+}
+
+.nav-items div {
+    border: 1px solid black;
+    margin: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    border-radius: 10px;
+    width: 100px
+}
+
+.nav-items div:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.nav-items h2{
+    margin: 5px;
+}

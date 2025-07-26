@@ -22,3 +22,41 @@
 
 }
 
+.auth-title{
+    width: 175lvb;
+    border-bottom: 5px dotted gray;
+    background-color: lightgray;
+    height: 100px;
+}
+
+.auth-button {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.login-btn {
+  background-color: #d3d3d3; /* lightgray */
+  border: 2px solid #a9a9a9; /* darkgray border */
+  color: #333333; /* dark text */
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #b0b0b0; /* slightly darker gray */
+  border-color: #808080; /* medium gray */
+}
+
+.login-btn:active {
+  background-color: #999999;
+  border-color: #666666;
+}
+
+.login-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(169, 169, 169, 0.5);
+}

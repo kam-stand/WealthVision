@@ -1,22 +1,22 @@
 <div class="auth-container">
     <div class="auth-info">
-        @if (!login) {
-            <div>
-            <h1>WealthVision!</h1>
-        </div>
+
         <div>
-            <h2>Stock are going crazy!! 🚀</h2>
-        </div>
-        <div>
-            <button (click)="handleLogin()">Login!</button>
-        </div>
-        }
-        @else {
-        <div>
-            <div>
-                <h1>Loading...</h1>
+            @if (!login)
+            {
+            <div class="auth-title">
+                <h1>WealthVision!</h1>
+
             </div>
+            <div>
+                <h2>Stocks are going crazy! 🚀</h2>
+                <div class="auth-button">
+                    <button (click)="handleLogin()" class="login-btn">Login!</button>
+                </div>
+
+            </div>
+            }
         </div>
-        }
+
     </div>
 </div>

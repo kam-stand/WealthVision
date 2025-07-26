@@ -15,11 +15,7 @@ export class Auth {
    }
   handleLogin(){
     this.login = true;
-    this.http.get(environment.API_SERVER_URL).subscribe(
-      data => {
-        console.log("Got the data " + data.valueOf())
-      }
-    )
+      window.location.href = `${environment.API_SERVER_URL}/oauth2/authorization/google`;
   }
   
 }

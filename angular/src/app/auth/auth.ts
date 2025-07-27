@@ -15,7 +15,7 @@ export class Auth {
    }
   handleLogin(){
     this.login = true;
-      window.location.href = `${environment.API_SERVER_URL}/oauth2/authorization/google`;
+      window.location.href = `${environment.API_SERVER_URL}oauth2/authorization/google`;
   }
   
 }

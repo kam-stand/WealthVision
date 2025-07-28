@@ -1,0 +1,12 @@
+<div class="home-container">
+  @for (news of newsList; track news.title) {
+    <app-news
+      [title]="news.title"
+      [authors]="news.authors"
+      [url]="news.url"
+      [image]="news.banner_image"
+      [source]="news.source"
+      [description]="news.description">
+    </app-news>
+  }
+</div>

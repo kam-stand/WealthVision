@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Navbar } from "../navbar/navbar";
 @Component({
   selector: 'app-auth',
-  imports: [Navbar],
+  imports: [],
   templateUrl: './auth.html',
   styleUrl: './auth.css'
 })

@@ -1,0 +1,37 @@
+<!-- Put in the Navbar on top -->
+<div>
+    <div>
+        <app-navbar (navSelected)="HandleNav($event)"></app-navbar>
+    </div>
+    <div>
+        @switch (view) {
+        @case ('home') {
+        <div>get news</div>
+        <app-home></app-home>
+        }
+        @case ('stocks') {
+        <div>get stocks</div>
+        }
+        @case ('etf') {
+        <div>get etfs</div>
+        }
+        @case ('crypto') {
+        <div>get crypto</div>
+        }
+        @case ('forex') {
+        <div>get forex</div>
+        }
+        @case ('commodities') {
+        <div>get commodities</div>
+        }
+        @case ('profile') {
+        <div>get profile </div>
+        }
+    
+        
+        @default {
+        <div>get news</div>
+        }
+        }
+    </div>
+</div>

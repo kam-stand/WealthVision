@@ -11,7 +11,7 @@ export class Navbar {
   @Output() navSelected = new EventEmitter<string>();
   onNavClick(option:string){
     this.navSelected.emit(option);
-    console.log("The nav bar option: " + this.navSelected);
+    console.log("The nav bar option: " + option);
   }
 
 }

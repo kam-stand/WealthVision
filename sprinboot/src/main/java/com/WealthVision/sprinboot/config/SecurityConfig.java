@@ -16,20 +16,20 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers( "/oauth2/**").permitAll()
+                        .requestMatchers("/api/v1/home", "/oauth2/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .csrf(csrf -> csrf.disable()) // Disable for APIs (or configure tokens)
-                .oauth2Login(oauth -> oauth.defaultSuccessUrl("http://localhost:4200/profile", true))
-                .build(); // Removed httpBasic()
+                .csrf(csrf -> csrf.disable())
+                .oauth2Login(oauth -> oauth.defaultSuccessUrl("http://localhost:4200/main", true))
+                .build();
     }
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-
-        configuration.addAllowedOrigin("http://localhost:4200"); // ✅ Angular origin only
+        configuration.addAllowedOrigin("http://localhost:4200");
+        configuration.addAllowedOrigin("http://localhost:5173");
         configuration.addAllowedHeader("*");
         configuration.addAllowedMethod("*");
         configuration.setAllowCredentials(true);

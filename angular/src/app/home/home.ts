@@ -21,10 +21,15 @@ export class Home {
 newsList: NewsItem[] = [];
 
   constructor(private http: HttpClient) {}
+ngOnInit(): void {
+  this.http.get<NewsItem[]>('http://localhost:8080/api/v1/home', {withCredentials:true}).subscribe({
+    next: (data) => {
+      this.newsList = data;
+    },
+    error: (err) => {
+      console.error('Error fetching news:', err);
+    }
+  });
+}
 
-  ngOnInit(): void {
-    this.http.get<NewsItem[]>('http://localhost:8080/api/v1/home')
-      .subscribe(data => this.newsList= data
-      );
-  }
 }

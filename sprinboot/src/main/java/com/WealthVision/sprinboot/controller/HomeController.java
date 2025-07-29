@@ -25,8 +25,11 @@ public class HomeController {
     }
     @GetMapping("")
     public ResponseEntity<List<News>> getMarketNews() {
+        System.out.println("getMarketNews");
         RestTemplate restTemplate = new RestTemplate();
         String response = restTemplate.getForObject(getApiUrl(), String.class);
+        System.out.println("API response: " + response);
+        System.out.println("API key: " + apiKey);
 
         List<News> newsList = new ArrayList<>();
         try {
@@ -58,4 +61,5 @@ public class HomeController {
 
         return ResponseEntity.ok(newsList);
     }
+
 }

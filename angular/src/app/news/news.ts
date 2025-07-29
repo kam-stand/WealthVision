@@ -15,4 +15,9 @@ export class News {
   @Input() source!: string;
   @Input() description!: string;
 
+  handleSourceClick(){
+      window.location.href = `${this.url}`;
+
+  }
+
 }

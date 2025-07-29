@@ -1,24 +1,22 @@
 <div class="news-container">
-    <div class="news-info">
+    <div class="news-info" (click)="handleSourceClick()">
         <div class="news-header">
             <div>
                 <h2>{{title}}</h2>
             </div>
             <div>
-                <div>{{authors}}</div>
-
-                <div>{{source}}</div>
+                <div class="pill pill-authors">{{authors}}</div>
+                <div class="pill pill-source">{{source}}</div>
             </div>
         </div>
+
         <div class="news-bio">
             <div>
                 <img src="{{image}}" alt="image">
             </div>
             <div>
                 {{description}}
-            </div>
-            <div>
-                {{url}}
+                
             </div>
         </div>
     </div>

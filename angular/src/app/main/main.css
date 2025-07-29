@@ -1,0 +1,23 @@
+.view-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.scrollable {
+    max-height: 600px; /* adjust as needed */
+    overflow-y: auto;
+    width: 100%;
+    max-width: 900px;
+    padding-right: 10px;
+}

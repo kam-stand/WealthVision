@@ -3,6 +3,7 @@ package com.WealthVision.sprinboot.model;
 public class Company {
     private String Symbol;
     private String Name;
+    private String Description;
     private String MarketCapitalization;
     private String EPS;
     private  String DilutedEPSTTM;
@@ -23,9 +24,10 @@ public class Company {
 
     }
 
-    public Company(String symbol, String name, String marketCapitalization, String EPS, String dilutedEPSTTM, String PERatio, String trailingPE, String forwardPE, String revenueTTM, String profitMargin, String operatingMarginTTM, String dividendPerShare, String dividendYield, String quarterlyEarningsGrowthYOY, String quarterlyRevenueGrowthYOY) {
+    public Company(String symbol, String name, String Description,  String marketCapitalization, String EPS, String dilutedEPSTTM, String PERatio, String trailingPE, String forwardPE, String revenueTTM, String profitMargin, String operatingMarginTTM, String dividendPerShare, String dividendYield, String quarterlyEarningsGrowthYOY, String quarterlyRevenueGrowthYOY) {
         Symbol = symbol;
         Name = name;
+        Description = Description;
         MarketCapitalization = marketCapitalization;
         this.EPS = EPS;
         DilutedEPSTTM = dilutedEPSTTM;
@@ -159,5 +161,12 @@ public class Company {
 
     public void setQuarterlyRevenueGrowthYOY(String quarterlyRevenueGrowthYOY) {
         QuarterlyRevenueGrowthYOY = quarterlyRevenueGrowthYOY;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+    public void setDescription(String description) {
+        Description = description;
     }
 }

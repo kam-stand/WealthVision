@@ -1,0 +1,21 @@
+<div class="stock-selector">
+  <h2>Choose a Stock</h2>
+
+  <input
+    type="text"
+    placeholder="Search stocks by name or symbol..."
+    [(ngModel)]="searchTerm"
+    class="search-input"
+    aria-label="Search stocks"
+  />
+
+  <div class="scrollable-stock">
+    <div class="stock-list-container">
+      @for (stock of filteredStocks; track stock.symbol) {
+        <div class="stock-list-item">
+          {{ stock.name }}: <span class="symbol">{{ stock.symbol }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

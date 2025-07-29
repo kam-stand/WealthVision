@@ -36,9 +36,10 @@ public class CompanyController {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode root = objectMapper.readTree(response);
-            String Symbol = root.findValue("symbol").asText();
-            String name = root.findValue("name").asText();
-             String MarketCapitalization = root.findValue("marketCapitalization").asText();
+            String Symbol = root.findValue("Symbol").asText();
+            String name = root.findValue("Name").asText();
+            String Description = root.findValue("Description").asText();
+             String MarketCapitalization = root.findValue("MarketCapitalization").asText();
              String EPS = root.findValue("EPS").asText();
              String PERatio = root.findValue("PERatio").asText();
               String DilutedEPSTTM = root.findValue("DilutedEPSTTM").asText();
@@ -58,6 +59,7 @@ public class CompanyController {
               Company company = new Company(
                       Symbol,
                       name,
+                      Description,
                       MarketCapitalization,
                       EPS,
                       PERatio,

@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Navbar } from "../navbar/navbar";
 import { Home } from '../home/home';
 import { News } from "../news/news";
+import { Stocks } from '../stocks/stocks';
 
 @Component({
   selector: 'app-main',
-  imports: [Navbar, Home,],
+  imports: [Navbar, Home, Stocks],
   templateUrl: './main.html',
   styleUrl: './main.css'
 })

@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  background-color: #f5f5f5; /* light gray */
+  color: #000; /* black text */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: auto;
+}
+
+.company-header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.company-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.company-header .symbol {
+  color: #007BFF;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.company-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.company-financials h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.financial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  font-size: 0.95rem;
+}

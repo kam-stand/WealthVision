@@ -1,0 +1,75 @@
+.stock-selector {
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9;
+  color: #111;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.search-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.search-input:focus {
+  border-color: #007bff; /* blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  background-color: #fff;
+}
+
+.scrollable-stock {
+  max-height: 350px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.05);
+}
+
+.stock-list-container {
+  padding: 10px 0;
+}
+
+.stock-list-item {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.stock-list-item:last-child {
+  border-bottom: none;
+}
+
+.stock-list-item:hover {
+  background-color: #f0f4ff; /* subtle light blue highlight on hover */
+}
+
+.symbol {
+  color: #007bff; /* blue for the symbol */
+  font-weight: 700;
+  font-family: monospace;
+}

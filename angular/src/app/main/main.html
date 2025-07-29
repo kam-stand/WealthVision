@@ -1,40 +1,31 @@
 <!-- Put in the Navbar on top -->
 <div>
-    <div>
-        <app-navbar (navSelected)="HandleNav($event)"></app-navbar>
-    </div>
-    <div>
-        @switch (view) {
-        @case ('home') {
-        <div class="view-home">
-    <h2 class="section-title">Recent News</h2>
-    <div class="scrollable">
+  <div>
+    <app-navbar (navSelected)="HandleNav($event)"></app-navbar>
+  </div>
+  <div>
+    @switch (view) { @case ('home') {
+    <div class="view-home">
+      <h2 class="section-title">Recent News</h2>
+      <div class="scrollable">
         <app-home></app-home>
+      </div>
     </div>
-</div>
-        }
-        @case ('stocks') {
-        <div>get stocks</div>
-        }
-        @case ('etf') {
-        <div>get etfs</div>
-        }
-        @case ('crypto') {
-        <div>get crypto</div>
-        }
-        @case ('forex') {
-        <div>get forex</div>
-        }
-        @case ('commodities') {
-        <div>get commodities</div>
-        }
-        @case ('profile') {
-        <div>get profile </div>
-        }
-        
-        @default {
-        <div>get news</div>
-        }
-        }
-    </div>
+    } @case ('stocks') {
+    <div>Search Stocks</div>
+    <app-stocks></app-stocks>
+    } @case ('etf') {
+    <div>get etfs</div>
+    } @case ('crypto') {
+    <div>get crypto</div>
+    } @case ('forex') {
+    <div>get forex</div>
+    } @case ('commodities') {
+    <div>get commodities</div>
+    } @case ('profile') {
+    <div>get profile</div>
+    } @default {
+    <div>get news</div>
+    } }
+  </div>
 </div>

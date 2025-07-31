@@ -12,7 +12,7 @@
   <div class="scrollable-stock">
     <div class="stock-list-container">
       @for (stock of filteredStocks; track stock.symbol) {
-        <div class="stock-list-item">
+        <div class="stock-list-item" (click)="onSelectStock(stock.symbol)">
           {{ stock.name }}: <span class="symbol">{{ stock.symbol }}</span>
         </div>
       }

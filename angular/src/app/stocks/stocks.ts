@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 interface stockList {
@@ -17,6 +17,12 @@ export class Stocks implements OnInit {
 
   stock_list: stockList[] = [];
   searchTerm: string = '';
+  @Output() stockChosen = new EventEmitter<string>();
+
+  onSelectStock(stock:string){
+    this.stockChosen.emit(stock);
+    console.log("the stock ticker is: ", stock);
+  }
 
   ngOnInit(): void {
     fetch('/nyse_full_tickers.json')

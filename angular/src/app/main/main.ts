@@ -3,10 +3,11 @@ import { Navbar } from "../navbar/navbar";
 import { Home } from '../home/home';
 import { News } from "../news/news";
 import { Stocks } from '../stocks/stocks';
+import { Company } from "../company/company";
 
 @Component({
   selector: 'app-main',
-  imports: [Navbar, Home, Stocks],
+  imports: [Navbar, Home, Company],
   templateUrl: './main.html',
   styleUrl: './main.css'
 })

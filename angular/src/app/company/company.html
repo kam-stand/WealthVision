@@ -1,27 +1,34 @@
-<div class="company-header">
-  <h2>{{ Name }}</h2>
-  <p class="symbol">{{ Symbol }}</p>
-</div>
+<div>
+  @if (!have_company_data) {
+    <app-stocks (stockChosen)="handleStock_Option($event)"></app-stocks>
+  }
+  @else {
+    <div class="company-header">
+      <h2>{{ comp_object?.name }}</h2>
+      <p class="symbol">{{ comp_object?.symbol }}</p>
+    </div>
 
-<div class="company-description">
-  <p>{{ Description }}</p>
-</div>
+    <div class="company-description">
+      <p>{{ comp_object?.description }}</p>
+    </div>
 
-<div class="company-financials">
-  <h3>Financial Overview</h3>
-  <div class="financial-grid">
-    <div><strong>Market Cap:</strong> {{ MarketCapitalization }}</div>
-    <div><strong>EPS:</strong> {{ EPS }}</div>
-    <div><strong>Diluted EPS (TTM):</strong> {{ DilutedEPSTTM }}</div>
-    <div><strong>PE Ratio:</strong> {{ PERatio }}</div>
-    <div><strong>Trailing PE:</strong> {{ TrailingPE }}</div>
-    <div><strong>Forward PE:</strong> {{ ForwardPE }}</div>
-    <div><strong>Revenue (TTM):</strong> {{ RevenueTTM }}</div>
-    <div><strong>Profit Margin:</strong> {{ ProfitMargin }}</div>
-    <div><strong>Operating Margin (TTM):</strong> {{ OperatingMarginTTM }}</div>
-    <div><strong>Dividend Per Share:</strong> {{ DividendPerShare }}</div>
-    <div><strong>Dividend Yield:</strong> {{ DividendYield }}</div>
-    <div><strong>Quarterly Earnings Growth (YOY):</strong> {{ QuarterlyEarningsGrowthYOY }}</div>
-    <div><strong>Quarterly Revenue Growth (YOY):</strong> {{ QuarterlyRevenueGrowthYOY }}</div>
-  </div>
+    <div class="company-financials">
+      <h3>Financial Overview</h3>
+      <div class="financial-grid">
+        <div><strong>Market Cap:</strong> {{ comp_object?.marketCapitalization }}</div>
+        <div><strong>EPS:</strong> {{ comp_object?.eps }}</div>
+        <div><strong>Diluted EPS (TTM):</strong> {{ comp_object?.dilutedEPSTTM }}</div>
+        <div><strong>PE Ratio:</strong> {{ comp_object?.peRatio }}</div>
+        <div><strong>Trailing PE:</strong> {{ comp_object?.trailingPE }}</div>
+        <div><strong>Forward PE:</strong> {{ comp_object?.forwardPE }}</div>
+        <div><strong>Revenue (TTM):</strong> {{ comp_object?.revenueTTM }}</div>
+        <div><strong>Profit Margin:</strong> {{ comp_object?.profitMargin }}</div>
+        <div><strong>Operating Margin (TTM):</strong> {{ comp_object?.operatingMarginTTM }}</div>
+        <div><strong>Dividend Per Share:</strong> {{ comp_object?.dividendPerShare }}</div>
+        <div><strong>Dividend Yield:</strong> {{ comp_object?.dividendYield }}</div>
+        <div><strong>Quarterly Earnings Growth (YOY):</strong> {{ comp_object?.quarterlyEarningsGrowthYOY }}</div>
+        <div><strong>Quarterly Revenue Growth (YOY):</strong> {{ comp_object?.quarterlyRevenueGrowthYOY }}</div>
+      </div>
+    </div>
+  }
 </div>

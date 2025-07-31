@@ -6,41 +6,44 @@ public class Company {
     private String Description;
     private String MarketCapitalization;
     private String EPS;
-    private  String DilutedEPSTTM;
+    private String DilutedEPSTTM;
     private String PERatio;
     private String TrailingPE;
-    private  String ForwardPE;
-    private  String    RevenueTTM;
-    private  String    ProfitMargin;
-    private  String    OperatingMarginTTM;
+    private String ForwardPE;
+    private String RevenueTTM;
+    private String ProfitMargin;
+    private String OperatingMarginTTM;
 
-    private  String    DividendPerShare;
-    private  String    DividendYield;
+    private String DividendPerShare;
+    private String DividendYield;
 
-    private  String    QuarterlyEarningsGrowthYOY;
-    private  String    QuarterlyRevenueGrowthYOY;
+    private String QuarterlyEarningsGrowthYOY;
+    private String QuarterlyRevenueGrowthYOY;
 
     public Company() {
 
     }
 
-    public Company(String symbol, String name, String Description,  String marketCapitalization, String EPS, String dilutedEPSTTM, String PERatio, String trailingPE, String forwardPE, String revenueTTM, String profitMargin, String operatingMarginTTM, String dividendPerShare, String dividendYield, String quarterlyEarningsGrowthYOY, String quarterlyRevenueGrowthYOY) {
-        Symbol = symbol;
-        Name = name;
-        Description = Description;
-        MarketCapitalization = marketCapitalization;
+    public Company(String symbol, String name, String Description, String marketCapitalization, String EPS,
+            String dilutedEPSTTM, String PERatio, String trailingPE, String forwardPE, String revenueTTM,
+            String profitMargin, String operatingMarginTTM, String dividendPerShare, String dividendYield,
+            String quarterlyEarningsGrowthYOY, String quarterlyRevenueGrowthYOY) {
+        this.Symbol = symbol;
+        this.Name = name;
+        this.Description = Description;
+        this.MarketCapitalization = marketCapitalization;
         this.EPS = EPS;
-        DilutedEPSTTM = dilutedEPSTTM;
+        this.DilutedEPSTTM = dilutedEPSTTM;
         this.PERatio = PERatio;
-        TrailingPE = trailingPE;
-        ForwardPE = forwardPE;
-        RevenueTTM = revenueTTM;
-        ProfitMargin = profitMargin;
-        OperatingMarginTTM = operatingMarginTTM;
-        DividendPerShare = dividendPerShare;
-        DividendYield = dividendYield;
-        QuarterlyEarningsGrowthYOY = quarterlyEarningsGrowthYOY;
-        QuarterlyRevenueGrowthYOY = quarterlyRevenueGrowthYOY;
+        this.TrailingPE = trailingPE;
+        this.ForwardPE = forwardPE;
+        this.RevenueTTM = revenueTTM;
+        this.ProfitMargin = profitMargin;
+        this.OperatingMarginTTM = operatingMarginTTM;
+        this.DividendPerShare = dividendPerShare;
+        this.DividendYield = dividendYield;
+        this.QuarterlyEarningsGrowthYOY = quarterlyEarningsGrowthYOY;
+        this.QuarterlyRevenueGrowthYOY = quarterlyRevenueGrowthYOY;
     }
 
     public String getSymbol() {
@@ -166,6 +169,7 @@ public class Company {
     public String getDescription() {
         return Description;
     }
+
     public void setDescription(String description) {
         Description = description;
     }

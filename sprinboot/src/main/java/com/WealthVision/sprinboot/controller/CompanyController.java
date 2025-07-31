@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,75 +19,74 @@ import java.util.List;
 @RequestMapping("/api/v1/company")
 public class CompanyController {
 
-
     @Value("${alpha.vantage.api.key}")
-     String apiKey;
+    String apiKey;
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<List<Company>> getCompanyOverview(@PathVariable String symbol) {
+    public ResponseEntity<Company> getCompanyOverview(@PathVariable String symbol) {
         String baseUrl = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=" + symbol + "&apikey=" + apiKey;
         System.out.println(apiKey);
         System.out.println(baseUrl);
         RestTemplate restTemplate = new RestTemplate();
 
         String response = restTemplate.getForObject(baseUrl, String.class);
-        List<Company> companyList = new ArrayList<>();
+        System.out.println(response);
+        Company return_company = new Company();
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode root = objectMapper.readTree(response);
             String Symbol = root.findValue("Symbol").asText();
             String name = root.findValue("Name").asText();
             String Description = root.findValue("Description").asText();
-             String MarketCapitalization = root.findValue("MarketCapitalization").asText();
-             String EPS = root.findValue("EPS").asText();
-             String PERatio = root.findValue("PERatio").asText();
-              String DilutedEPSTTM = root.findValue("DilutedEPSTTM").asText();
-             String TrailingPE = root.findValue("TrailingPE").asText();
-              String ForwardPE  = root.findValue("ForwardPE").asText();
-              String    RevenueTTM = root.findValue("RevenueTTM").asText();
-              String    ProfitMargin = root.findValue("ProfitMargin").asText();
-              String    OperatingMarginTTM = root.findValue("OperatingMarginTTM").asText();
+            String MarketCapitalization = root.findValue("MarketCapitalization").asText();
+            String EPS = root.findValue("EPS").asText();
+            String PERatio = root.findValue("PERatio").asText();
+            String DilutedEPSTTM = root.findValue("DilutedEPSTTM").asText();
+            String TrailingPE = root.findValue("TrailingPE").asText();
+            String ForwardPE = root.findValue("ForwardPE").asText();
+            String RevenueTTM = root.findValue("RevenueTTM").asText();
+            String ProfitMargin = root.findValue("ProfitMargin").asText();
+            String OperatingMarginTTM = root.findValue("OperatingMarginTTM").asText();
 
-              String    DividendPerShare = root.findValue("DividendPerShare").asText();
+            String DividendPerShare = root.findValue("DividendPerShare").asText();
 
-              String    DividendYield = root.findValue("DividendYield").asText();
+            String DividendYield = root.findValue("DividendYield").asText();
 
-              String    QuarterlyEarningsGrowthYOY = root.findValue("QuarterlyEarningsGrowthYOY").asText();
-              String    QuarterlyRevenueGrowthYOY = root.findValue("QuarterlyRevenueGrowthYOY").asText();
+            String QuarterlyEarningsGrowthYOY = root.findValue("QuarterlyEarningsGrowthYOY").asText();
+            String QuarterlyRevenueGrowthYOY = root.findValue("QuarterlyRevenueGrowthYOY").asText();
 
-              Company company = new Company(
-                      Symbol,
-                      name,
-                      Description,
-                      MarketCapitalization,
-                      EPS,
-                      PERatio,
-                      DilutedEPSTTM,
-                      TrailingPE,
-                      ForwardPE,
-                      RevenueTTM,
-                      ProfitMargin,
-                      OperatingMarginTTM,
-                      DividendPerShare,
-                      DividendYield,
-                      QuarterlyEarningsGrowthYOY,
-                      QuarterlyRevenueGrowthYOY
-              );
-              companyList.add(company);
+            Company company = new Company(
+                    Symbol,
+                    name,
+                    Description,
+                    MarketCapitalization,
+                    EPS,
+                    PERatio,
+                    DilutedEPSTTM,
+                    TrailingPE,
+                    ForwardPE,
+                    RevenueTTM,
+                    ProfitMargin,
+                    OperatingMarginTTM,
+                    DividendPerShare,
+                    DividendYield,
+                    QuarterlyEarningsGrowthYOY,
+                    QuarterlyRevenueGrowthYOY);
+            return_company = company;
 
         } catch (JsonProcessingException e) {
 
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
 
-        return ResponseEntity.ok(companyList);
-
+        return ResponseEntity.ok(return_company);
 
     }
 
     @GetMapping("/monthly/{symbol}")
     public ResponseEntity<?> getCompany(@PathVariable String symbol) {
-        String baseUrl = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + symbol + "&apikey=" + apiKey;
+        String baseUrl = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + symbol + "&apikey="
+                + apiKey;
         System.out.println(apiKey);
         System.out.println(baseUrl);
         RestTemplate restTemplate = new RestTemplate();
@@ -97,6 +95,5 @@ public class CompanyController {
         return ResponseEntity.ok(response);
 
     }
-
 
 }
